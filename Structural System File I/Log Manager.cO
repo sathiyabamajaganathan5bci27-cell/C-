@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+
+void writeLog(const std::string& filename, const std::string& msg) {
+    std::ofstream file(filename, std::ios::app);
+    if (file.is_open()) {
+        file << "[LOG]: " << msg << "\n";
+        file.close();
+    }
+}
+
+int main() {
+    writeLog("system.log", "Application started successfully.");
+    return 0;
+}
