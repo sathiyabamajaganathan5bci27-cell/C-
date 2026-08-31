@@ -1,0 +1,11 @@
+#include <iostream>
+#include <variant>
+
+int main() {
+    std::variant<int, double, std::string> dataBlock;
+    dataBlock = 3.14;
+    if (std::holds_alternative<double>(dataBlock)) {
+        std::cout << "Extracted: " << std::get<double>(dataBlock) << "\n";
+    }
+    return 0;
+}
